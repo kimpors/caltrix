@@ -33,8 +33,16 @@ input[type=number] {
 	@apply grid grid-cols-3 gap-10 p-10 row-span-5
 }
 
+.container {
+	@apply flex flex-col w-fit h-fit self-center justify-self-center justify-center
+}
+
+.tab input[type=button] {
+	@apply mr-0.5 px-1.5 pt-1 bg-ctp-red text-3xl font-bold
+}
+
 .card {
-	@apply flex flex-col bg-ctp-red rounded-3xl h-fit self-center p-5
+	@apply flex flex-col bg-ctp-red h-fit self-center p-5
 }
 
 .option {
@@ -69,3 +77,10 @@ input[type=number] {
 	box-shadow: 0px 0px 4px 25px rgb(0 0 0 / 25%);
 }
 
+.top-radius {
+	border-radius: 16px 16px 0px 0px;
+}
+
+.mixed-radius {
+	border-radius: 0px 16px 16px 16px;
+}
