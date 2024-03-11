@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# Caltrix 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Site for matrix calculation, in this project i trying    
+achieve like game view, i mean stylish  menus, tabs, etc.    
+This project just for portfolio, so i don't think i stick    
+along with it(if i did ever -_-).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology
 
-## Expanding the ESLint configuration
+For this site i use [React.js](https://react.dev/), [Tailwind](https://tailwindcss.com/)     
+and [Catppuccin](https://tailwindcss.catppuccin.com/) (i think it's the best color palette)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Contributing
 
-- Configure the top-level `parserOptions` property like this:
+Contributions are welcome! If you have any suggestions,    
+bug reports, or would like to contribute a new feature,    
+please create an issue or submit a pull request.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
