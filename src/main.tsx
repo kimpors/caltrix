@@ -7,12 +7,12 @@ import './style.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-  	<Header >
-		Caltrix
+  	<Header>
+		<h1>Caltrix</h1>
 	</Header>
     <App />
 	<Footer>
-		Hello
+		<h1>Result</h1>
 	</Footer>
   </React.StrictMode>,
 )

@@ -5,9 +5,5 @@ interface Props {
 }
 
 export default function Footer({ children }: Props) {
-	return (
-		<footer className="footer">
-			<h1>{ children }</h1>
-		</footer>
-	)
+	return <footer className="footer">{ children }</footer>
 }

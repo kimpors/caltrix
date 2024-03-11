@@ -7,17 +7,65 @@ html, body, main {
 }
 
 main {
-	@apply grid grid-rows-3
+	@apply grid grid-rows-8 bg-ctp-flamingo
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+	box-shadow: inset 0px 4px 4px 0px rgb(0 0 0 / 25%);
 }
 
 .header {
-	@apply flex flex-col bg-ctp-mantle h-32 justify-center
+	@apply flex flex-col bg-ctp-mantle justify-center
 }
 
 .header h1 {
 	@apply px-10 text-6xl text-ctp-text font-bold
 }
 
-.footer {
-	@apply bg-ctp-mantle text-ctp-text object-bottom
+.main {
+	@apply grid grid-cols-3 gap-10 p-10 row-span-5
 }
+
+.card {
+	@apply flex flex-col bg-ctp-red rounded-3xl h-fit self-center p-5
+}
+
+.option {
+	@apply flex bg-ctp-peach rounded-3xl w-fit h-fit justify-self-center self-center
+}
+
+.option button {
+	@apply h-1/4 font-bold text-3xl
+}
+
+.matrix {
+	@apply grid gap-5 my-4
+}
+
+.matrix input[type=number] {
+	@apply w-12 bg-ctp-flamingo
+}
+
+.footer {
+	@apply flex bg-ctp-mantle text-ctp-text object-bottom justify-center py-10 row-span-2
+}
+
+.footer h1 {
+	@apply text-6xl text-ctp-subtext0 font-bold
+}
+
+.shadow {
+	box-shadow: 0px 10px 4px 5px rgb(0 0 0 / 25%);
+}
+
+.shadow-lg {
+	box-shadow: 0px 0px 4px 25px rgb(0 0 0 / 25%);
+}
+
