@@ -8,14 +8,11 @@ export default function App() {
 	let [moreB, setMoreB] = useState(false);
 	let [matrix, setMatrix] = useState(true);
 
-
-
-
 	return (
 		<article className="main">
 			<article className='container'>
 				<section className='tab'>
-					<input className='top-radius shadow' type="button" value="="  onClick={ () => setMoreA(!moreA) }/>
+					<button className='top-radius shadow' type="button" onClick={ () => setMoreA(!moreA)}>=</button>
 				</section>
 				{moreA 
 					? <Card><h1>More</h1></Card>
@@ -31,9 +28,9 @@ export default function App() {
 			</Option>
 			<article className='container'>
 				<section className='tab'>
-					<input className='top-radius shadow' type="button" value="=" onClick={ () => setMoreB(!moreB) } />
-					<input className='top-radius shadow' type="button" value="M" onClick={ () => setMatrix(true) } />
-					<input className='top-radius shadow' type="button" value="N" onClick={ () => setMatrix(false) }/>
+					<button className='top-radius shadow' type="button" onClick={ () => setMoreB(!moreB)}>=</button>
+					<button className='top-radius shadow' type="button" onClick={ () => setMatrix(true)}>M</button>
+					<button className='top-radius shadow' type="button" onClick={ () => setMatrix(false)}>N</button>
 				</section>
 
 				{moreB
@@ -43,7 +40,7 @@ export default function App() {
 							{matrix
 								? <Matrix size={4}/>
 								: <input type="number" value="hello" />
-							}
+}
 							<Option className='flex-row mx-2 p-2'>
 								<button type="button">+</button>
 								<button type="button">clean</button>

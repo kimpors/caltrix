@@ -29,6 +29,10 @@ input[type=number] {
 	@apply px-10 text-6xl text-ctp-text font-bold
 }
 
+.bookmark {
+	@apply text-ctp-text self-end
+}
+
 .main {
 	@apply grid grid-cols-3 gap-10 p-10 row-span-5
 }
@@ -37,7 +41,7 @@ input[type=number] {
 	@apply flex flex-col w-fit h-fit self-center justify-self-center justify-center
 }
 
-.tab input[type=button] {
+.tab button {
 	@apply mr-0.5 px-1.5 pt-1 bg-ctp-red text-3xl font-bold
 }
 
