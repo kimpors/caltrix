@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, main {
+	@apply h-full
+}
+
+main {
+	@apply grid grid-rows-3
+}
+
+.header {
+	@apply flex flex-col bg-ctp-mantle h-32 justify-center
+}
+
+.header h1 {
+	@apply px-10 text-6xl text-ctp-text font-bold
+}
+
+.footer {
+	@apply bg-ctp-mantle text-ctp-text object-bottom
+}
