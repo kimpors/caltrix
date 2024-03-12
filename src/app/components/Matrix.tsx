@@ -19,7 +19,5 @@ export default function Matrix({ size }:Props) {
 		<input key={num.toString()} type="number" />
 	))  
 
-	return (
-		<section className={`matrix grid-cols-4`}>{ list }</section>
-	)
+	return <section className={`matrix grid-cols-4`}>{ list }</section>
 }

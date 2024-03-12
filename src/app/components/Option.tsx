@@ -6,7 +6,5 @@ interface Props {
 }
 
 export default function Option({ className, children }:Props) {
-	return (
-		<section className={`option shadow ${className}`}>{ children }</section>
-	)
+	return <section className={`option shadow ${ className }`}>{ children }</section>
 }

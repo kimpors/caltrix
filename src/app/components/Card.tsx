@@ -5,7 +5,5 @@ interface Props {
 }
 
 export default function Card({ children }:Props) {
-	return (
-		<section className="card mixed-radius shadow">{ children }</section>
-	)
+	return <section className="card mixed-radius shadow">{ children }</section>
 }

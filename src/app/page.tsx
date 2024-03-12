@@ -1,9 +1,11 @@
-import Card from './components/Card.tsx'
-import Option from './components/Option.tsx'
-import Matrix from './components/Matrix.tsx'
+'use client'
+
+import Card from './components/Card'
+import Option from './components/Option'
+import Matrix from './components/Matrix'
 import { useState } from 'react';
 
-export default function App() {
+export default function Home() {
 	let [moreA, setMoreA] = useState(false);
 	let [moreB, setMoreB] = useState(false);
 	let [matrix, setMatrix] = useState(true);
