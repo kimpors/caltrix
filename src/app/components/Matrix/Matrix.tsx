@@ -1,3 +1,5 @@
+import styles from './Matrix.module.css'
+
 interface Props {
 	size: number
 }
@@ -19,5 +21,6 @@ export default function Matrix({ size }:Props) {
 		<input key={num.toString()} type="number" />
 	))  
 
-	return <section className={`matrix grid-cols-4`}>{ list }</section>
+	return <section className={ styles.matrix + " " + "grid-cols-4"}>{ list }</section>
 }
+

@@ -1,0 +1,7 @@
+.card {
+	@apply flex flex-col bg-ctp-red h-fit self-center p-5
+}
+
+.round {
+	border-radius: 0px 16px 16px 16px;
+}

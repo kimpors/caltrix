@@ -1,8 +1,8 @@
 'use client'
 
-import Card from './components/Card'
-import Option from './components/Option'
-import Matrix from './components/Matrix'
+import Card from './components/Card/Card'
+import Option from './components/Option/Option'
+import Matrix from './components/Matrix/Matrix'
 import { useState } from 'react';
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
 	let [matrix, setMatrix] = useState(true);
 
 	return (
-		<article className="main">
+		<main>
 			<article className='container'>
 				<section className='tab'>
 					<button className='top-radius shadow' type="button" onClick={ () => setMoreA(!moreA)}>=</button>
@@ -21,7 +21,6 @@ export default function Home() {
 					: <Card><Matrix size={4}/></Card> 
 				}
 			</article>
-		
 			<Option className='flex-col p-5'>
 				<button type="button">+</button>
 				<button type="button">-</button>
@@ -42,7 +41,7 @@ export default function Home() {
 							{matrix
 								? <Matrix size={4}/>
 								: <input type="number" value="hello" />
-}
+							}
 							<Option className='flex-row mx-2 p-2'>
 								<button type="button">+</button>
 								<button type="button">clean</button>
@@ -52,6 +51,6 @@ export default function Home() {
 					)
 				}
 			</article>
-		</article>
+		</main>
 	)
 }

@@ -6,7 +6,7 @@ html, body, main {
 	@apply h-full
 }
 
-main {
+body {
 	@apply grid grid-rows-8 bg-ctp-flamingo
 }
 
@@ -21,19 +21,7 @@ input[type=number] {
 	box-shadow: inset 0px 4px 4px 0px rgb(0 0 0 / 25%);
 }
 
-.header {
-	@apply flex flex-col bg-ctp-mantle justify-center
-}
-
-.header h1 {
-	@apply px-10 text-6xl text-ctp-text font-bold
-}
-
-.bookmark {
-	@apply text-ctp-text self-end
-}
-
-.main {
+main {
 	@apply grid grid-cols-3 gap-10 p-10 row-span-5
 }
 
@@ -43,34 +31,6 @@ input[type=number] {
 
 .tab button {
 	@apply mr-0.5 px-1.5 pt-1 bg-ctp-red text-3xl font-bold
-}
-
-.card {
-	@apply flex flex-col bg-ctp-red h-fit self-center p-5
-}
-
-.option {
-	@apply flex bg-ctp-peach rounded-3xl w-fit h-fit justify-self-center self-center
-}
-
-.option button {
-	@apply h-1/4 font-bold text-3xl
-}
-
-.matrix {
-	@apply grid gap-5 my-4
-}
-
-.matrix input[type=number] {
-	@apply w-12 bg-ctp-flamingo
-}
-
-.footer {
-	@apply flex bg-ctp-mantle text-ctp-text object-bottom justify-center py-10 row-span-2
-}
-
-.footer h1 {
-	@apply text-6xl text-ctp-subtext0 font-bold
 }
 
 .shadow {
@@ -83,8 +43,4 @@ input[type=number] {
 
 .top-radius {
 	border-radius: 16px 16px 0px 0px;
-}
-
-.mixed-radius {
-	border-radius: 0px 16px 16px 16px;
 }

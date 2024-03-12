@@ -1,0 +1,7 @@
+.matrix {
+	@apply grid gap-5 my-4
+}
+
+.matrix input[type=number] {
+	@apply w-12 bg-ctp-flamingo
+}

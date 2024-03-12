@@ -1,3 +1,5 @@
+import styles from './Header.module.css'
+
 import { ReactNode } from "react"
 
 interface Props {
@@ -5,5 +7,5 @@ interface Props {
 }
 
 export default function Header({ children }: Props) {
-	return <header className="header shadow-lg">{ children }</header>
+	return <header className={ styles.header + " shadow-lg" }>{ children }</header>
 }
