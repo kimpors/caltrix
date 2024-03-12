@@ -2,12 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark {
+	@apply bg-ctp-surface0
+}
+
+.pink {
+	@apply bg-ctp-flamingo
+}
+
+.blue {
+	@apply bg-ctp-blue
+}
+
 html, body, main {
 	@apply h-full
 }
 
 body {
-	@apply grid grid-rows-8 bg-ctp-flamingo
+	@apply grid grid-rows-8 
+}
+
+main {
+	@apply grid grid-cols-3 gap-10 p-10 row-span-5 items-center justify-items-center
 }
 
 input::-webkit-outer-spin-button,
@@ -17,20 +33,18 @@ input::-webkit-inner-spin-button {
 }
 
 input[type=number] {
-	-moz-appearance: textfield;
 	box-shadow: inset 0px 4px 4px 0px rgb(0 0 0 / 25%);
 }
-
-main {
-	@apply grid grid-cols-3 gap-10 p-10 row-span-5
-}
-
 .container {
-	@apply flex flex-col w-fit h-fit self-center justify-self-center justify-center
+	@apply flex flex-col min-w-full 
 }
 
 .tab button {
-	@apply mr-0.5 px-1.5 pt-1 bg-ctp-red text-3xl font-bold
+	@apply mr-0.5 px-1.5 pt-1 bg-ctp-red text-3xl font-bold 
+}
+
+.tab button {
+	border-radius: 16px 16px 0px 0px;
 }
 
 .shadow {
@@ -39,8 +53,4 @@ main {
 
 .shadow-lg {
 	box-shadow: 0px 0px 4px 25px rgb(0 0 0 / 25%);
-}
-
-.top-radius {
-	border-radius: 16px 16px 0px 0px;
 }

@@ -1,17 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-export const content = [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+export default {
+    content: [
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
 
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-];
-export const theme = {
-    extend: {},
+        "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
+        extend: {
+			colors: {
+				blue: {
+					color: '#8d6e63'
+				},
+			},
+		},
+    },
+    plugins: [
+        require("@catppuccin/tailwindcss")({
+            prefix: "ctp",
+            defaultFlavour: "macchiato",
+        }),
+    ],
 };
-export const plugins = [
-    require("@catppuccin/tailwindcss")({
-        prefix: "ctp",
-        defaultFlavour: "macchiato",
-    }),
-];

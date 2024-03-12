@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Bookmark from "./components/Bookmark/Bookmark";
+import Provider from "./components/Provider";
 import "./style.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,18 +19,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-		<article className="flex flex-col">
-			<Header>
-				<h1>Caltrix</h1>
-			</Header>
-			<Bookmark url="/settings"/>
-		</article>
-		{ children }
-		<Footer>
-			<h1>Result</h1>
-		</Footer>
+	  	<Provider>
+			<article className="flex flex-col">
+				<Header>
+					<h1>Caltrix</h1>
+				</Header>
+				<Bookmark next_url="/settings" previous_url="/" />
+			</article>
+			{ children }
+			<Footer>
+				<h1>Result</h1>
+			</Footer>
+		</Provider>
 	  </body>
     </html>
   );

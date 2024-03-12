@@ -1,3 +1,20 @@
 .bookmark {
-	@apply text-ctp-text self-end
+	@apply h-12 w-16 text-center font-bold text-3xl mr-2 self-end
 }
+
+.bookmark {
+	border-radius: 0px 0px 16px 16px;
+}
+
+.pink {
+	@apply bg-ctp-surface0
+} 
+
+.pink {
+	color: #876F6F
+}
+
+.dark {
+	@apply bg-ctp-rosewater text-ctp-surface0
+} 
+

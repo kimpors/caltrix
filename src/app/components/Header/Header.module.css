@@ -1,5 +1,5 @@
 .header {
-	@apply flex flex-col bg-ctp-mantle justify-center
+	@apply flex flex-col p-5 bg-ctp-mantle justify-center
 }
 
 .header h1 {
