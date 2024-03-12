@@ -1,5 +1,5 @@
 .card {
-	@apply flex flex-col bg-ctp-red w-full h-full self-center p-5
+	@apply flex flex-col bg-ctp-red w-full h-full p-5
 }
 
 .round {

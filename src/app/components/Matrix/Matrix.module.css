@@ -1,5 +1,5 @@
 .matrix {
-	@apply grid gap-5 my-4
+	@apply grid gap-y-5 my-2 
 }
 
 .matrix input[type=number] {

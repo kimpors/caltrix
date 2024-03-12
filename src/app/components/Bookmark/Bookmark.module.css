@@ -4,6 +4,7 @@
 
 .bookmark {
 	border-radius: 0px 0px 16px 16px;
+	transition: background-color 250ms ease-out
 }
 
 .pink {

@@ -1,7 +1,7 @@
 .option {
-	@apply flex bg-ctp-peach rounded-3xl w-fit h-fit justify-self-center self-center
+	@apply flex bg-ctp-peach rounded-3xl h-fit justify-self-center self-center
 }
 
 .option button {
-	@apply h-1/4 font-bold text-3xl
+	@apply h-1/4 font-bold text-2xl
 }

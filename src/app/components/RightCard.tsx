@@ -25,7 +25,7 @@ export default function RightCard() {
 							? <Matrix size={4}/>
 							: <input type="number" value="hello" />
 						}
-						<Option className='flex-row mx-2 p-2'>
+						<Option className='flex-row mx-2 p-2 mt-6 w-full'>
 							<button>+</button>
 							<button>clean</button>
 							<button>-</button>
