@@ -9,7 +9,7 @@ along with it(if i did ever -_-).
 
 ## Technology
 
-For this site i use [React.js](https://react.dev/), [Tailwind](https://tailwindcss.com/)     
+For this site i use [Next.js](https://nextjs.org/), [Tailwind](https://tailwindcss.com/)     
 and [Catppuccin](https://tailwindcss.catppuccin.com/) (i think it's the best color palette)
 
 ## Contributing
