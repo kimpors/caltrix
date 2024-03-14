@@ -38,6 +38,15 @@ input[type=number] {
   	-moz-appearance: textfield;
 	box-shadow: inset 0px 4px 4px 0px rgb(0 0 0 / 25%);
 }
+
+.matrix {
+	@apply grid gap-y-5 my-2 
+}
+
+.matrix input[type=number] {
+	@apply w-12 bg-ctp-flamingo
+}
+
 .container {
 	@apply flex flex-col min-w-full 
 }
