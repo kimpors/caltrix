@@ -5,7 +5,7 @@
 Site for matrix calculation, in this project i trying    
 achieve like game view, i mean stylish  menus, tabs, etc.    
 This project just for portfolio, so i don't think i stick    
-along with it(if i did ever -_-).
+along with it(if i ever did it -_-).
 
 ## Technology
 
