@@ -10,10 +10,10 @@ export default function Matrix({ name, size }:Props) {
 	const [left, setLeft] = useState([] as number[]);
 
 	useEffect(() => {
-		const res = JSON.parse(localStorage.getItem(name) || '{}');
+		const res = JSON.parse(localStorage.getItem(name) || '{}') as number[][];
 
 		if (res) {
-			setLeft(res);
+			setLeft(res.flat());
 		}
 	}, [])
 
@@ -22,8 +22,6 @@ export default function Matrix({ name, size }:Props) {
 		res[index] = value;
 		setLeft(res);
 	}
-
-	console.log(left);
 
 	return (
 		<section className={ styles.matrix + " grid-cols-4"}>

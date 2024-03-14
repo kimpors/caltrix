@@ -1,5 +1,5 @@
 .footer {
-	@apply flex bg-ctp-mantle text-ctp-text object-bottom justify-center py-10 row-span-2
+	@apply flex flex-col bg-ctp-mantle text-ctp-text object-bottom justify-center py-10 row-span-2
 }
 
 .footer h1 {

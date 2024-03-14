@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Card from "./Card/Card";
 import Matrix from "./Matrix/Matrix";
 import Option from "./Option/Option";
@@ -8,6 +8,15 @@ import Option from "./Option/Option";
 export default function RightCard() {
 	const [more, setMore] = useState(false);
 	const [matrix, setMatrix] = useState(true);
+	const [value, setValue] = useState(0);
+
+	useEffect(() => {
+		const res = JSON.parse(localStorage.getItem("value") || '{}') as number;
+
+		if (res) {
+			setValue(value);
+		}
+	}, [])
 
 	return (
 		<article className='container'>
@@ -22,8 +31,8 @@ export default function RightCard() {
 				: (
 					<Card>
 						{matrix
-							? <Matrix name="right" size={4} />
-							: <input type="number" value="hello" />
+							? <Matrix name="right" size={4}/>
+							: <input onChange={ event => { setValue(event.target.valueAsNumber) }} type="number" value={ value } />
 						}
 						<Option className='flex-row mx-2 p-2 mt-6 w-full'>
 							<button>+</button>

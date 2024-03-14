@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Bookmark from "./components/Bookmark/Bookmark";
 import Provider from "./components/Provider";
+import Result from "./components/Result/Result";
 import "./style.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default function RootLayout({
 			{ children }
 			<Footer>
 				<h1>Result</h1>
+				<Result />
 			</Footer>
 		</Provider>
 	  </body>
