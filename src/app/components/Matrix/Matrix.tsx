@@ -1,30 +1,35 @@
+import { useEffect, useState } from 'react';
 import styles from './Matrix.module.css'
 
 interface Props {
-	array: number[][]
-	set: (array: number[][]) => void
+	name: string
+	size: number
 }
 
-export default function Matrix({ array, set }:Props) {
-	let count = 0;
+export default function Matrix({ name, size }:Props) {
+	const [left, setLeft] = useState([] as number[]);
 
-	function handle(y: number, x:number, value: number) {
-		const temp = array.map((row, i) => row.map((num, j) => {
-			if (i === y && x === j) {
-				return value;
-			} else {
-				return array[i][j];
-			}
-		}))
+	useEffect(() => {
+		const res = JSON.parse(localStorage.getItem(name) || '{}');
 
-		set(temp);
-	  }
+		if (res) {
+			setLeft(res);
+		}
+	}, [])
+
+	const handle = (index: number, value: number) => {
+		const res = [...left];
+		res[index] = value;
+		setLeft(res);
+	}
+
+	console.log(left);
 
 	return (
-		<section className={ styles.matrix + " grid-cols-" + array.length}>
-			{array.map((row, i) => row.map((num, j) => 
-				<input key={ count++ } onChange={ event => handle(i, j, event.target.valueAsNumber) } type="number" value={ num }/>
-			))}
+		<section className={ styles.matrix + " grid-cols-4"}>
+			{left.map((num, i) => 
+				<input key={ i } onChange={ event => { handle(i, event.target.valueAsNumber) }} type="number" value={ num }/>
+			)}
 		</section>
 	)
 }

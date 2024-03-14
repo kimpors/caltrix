@@ -12,8 +12,7 @@
     "next": "14.1.3",
     "next-themes": "^0.2.1",
     "react": "^18",
-    "react-dom": "^18",
-    "state-pool": "^0.10.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@catppuccin/tailwindcss": "^0.1.6",
