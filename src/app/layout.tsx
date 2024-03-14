@@ -6,6 +6,7 @@ import Bookmark from "./components/Bookmark/Bookmark";
 import Provider from "./components/Provider";
 import Result from "./components/Result/Result";
 import "./style.css";
+import UrlChangeListener from "./components/UrlChangeListener";
 
 const inter = Inter({ subsets: ["latin"] });
 

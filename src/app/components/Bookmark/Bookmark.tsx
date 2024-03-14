@@ -3,6 +3,8 @@
 import Link from "next/link"
 import styles from './Bookmark.module.css'
 import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 
 interface Props {
 	next_url: string
@@ -10,22 +12,23 @@ interface Props {
 }
 
 export default function Bookmark({ next_url, previous_url }: Props) {
-	const {theme, setTheme} = useTheme();
+	const pathname = usePathname();
+	const { theme, setTheme } = useTheme();
+	const [style, setStyle] = useState("pink");
 
-	let style = '';
-
-	switch (theme) {
-		case "pink":
-			style = styles.pink
-			break;
-		case "dark":
-			style = styles.dark
-			break;
-	}
-
+	useEffect(() => {
+		if (pathname === "/settings") {
+			setStyle(styles.dark);
+			setTheme("dark");
+		} else {
+			setStyle(styles.pink);
+			setTheme("pink");
+		}
+	}, [pathname]);
+	
 	return (
 		<section className={ styles.bookmark + " " + style }>
-			<Link onClick={ () => setTheme(theme === 'dark' ? 'pink' : 'dark') } href={ theme !== 'dark' ? next_url : previous_url }>V</Link>
+			<Link href={ theme !== 'dark' ? next_url : previous_url }>V</Link>
 		</section>
 	)
 }

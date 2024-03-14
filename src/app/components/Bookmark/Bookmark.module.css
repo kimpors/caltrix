@@ -7,6 +7,10 @@
 	transition: background-color 250ms ease-out
 }
 
+.bookmark a {
+	@apply block
+}
+
 .pink {
 	@apply bg-ctp-surface0
 } 
