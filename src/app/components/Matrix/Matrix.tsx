@@ -7,27 +7,29 @@ interface Props {
 }
 
 export default function Matrix({ name, size }:Props) {
-	const [left, setLeft] = useState([] as number[]);
+	let count = 0;
+	const [left, setLeft] = useState([] as number[][]);
 
 	useEffect(() => {
 		const res = JSON.parse(localStorage.getItem(name) || '{}') as number[][];
 
 		if (res) {
-			setLeft(res.flat());
+			setLeft(res);
 		}
 	}, [])
 
-	const handle = (index: number, value: number) => {
+	const handle = (y: number, x: number, value: number) => {
 		const res = [...left];
-		res[index] = value;
+		res[y][x] = value;
 		setLeft(res);
+		localStorage.setItem(name, JSON.stringify(res));
 	}
 
 	return (
 		<section className={ styles.matrix + " grid-cols-4"}>
-			{left.map((num, i) => 
-				<input key={ i } onChange={ event => { handle(i, event.target.valueAsNumber) }} type="number" value={ num }/>
-			)}
+			{left.map((row, y) => row.map((num, x) =>
+				<input key={ count++ } onChange={ event => { handle(y, x, event.target.valueAsNumber) }} type="number" value={ num }/>
+			))}
 		</section>
 	)
 }

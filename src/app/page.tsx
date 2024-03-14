@@ -1,4 +1,4 @@
-import Option from './components/Option/Option'
+import MidlOption from './components/MidlOption';
 import LeftCart from './components/LeftCard';
 import RightCard from './components/RightCard';
 
@@ -6,12 +6,7 @@ export default function Home() {
 	return (
 		<main role='main'>
 			<LeftCart />
-			<Option className='flex-col p-5'>
-				<button>+</button>
-				<button>-</button>
-				<button>*</button>
-				<button>^</button>
-			</Option>
+			<MidlOption />
 			<RightCard />
 		</main>
 	)
