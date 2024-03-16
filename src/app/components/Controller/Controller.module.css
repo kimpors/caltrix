@@ -1,0 +1,7 @@
+.controller {
+	@apply grid grid-cols-3 mx-2 p-2 mt-6 
+}
+
+.controller button {
+	@apply h-full w-full
+}

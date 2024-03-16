@@ -6,6 +6,6 @@ interface Props {
 }
 
 export default function Card({ children }:Props) {
-	return <section className={ styles.card + " " + styles.round + " " + "shadow" }>{ children }</section>
+	return <section className={ styles.card + " " + styles.round + " " + "shadow-mid" }>{ children }</section>
 }
 
