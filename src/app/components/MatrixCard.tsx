@@ -35,7 +35,7 @@ export default function MatrixCard({ name, withNumberTab }:Props) {
 						<>
 							{number
 								? <input onChange={ event => { setValue(event.target.valueAsNumber) }} type="number" value={ value } />
-	 							: <Matrix name="right" size={4}/>
+	 							: <Matrix name={ name } />
 							}
 							<Controller name={ name }/>
 						</>
