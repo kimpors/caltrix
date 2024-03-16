@@ -1,5 +1,6 @@
 "use client"
 
+import { Determinant } from '@/app/script';
 import styles from './More.module.css';
 import { useRouter } from 'next/navigation';
 
@@ -27,10 +28,9 @@ export default function More({ matrixName }:Props) {
 		router.refresh();
 	}
 
-
 	return (
 		<section className={ styles.more }>
-			<button className="shadow">Determinant</button>
+			<button onClick={ () => console.log("det", Determinant(matrix))} className="shadow">Determinant</button>
 			<button>Reverse</button>
 			<button onClick={ () => swap() }>Swap</button>
 			<button>From Json</button>

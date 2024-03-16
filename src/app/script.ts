@@ -47,3 +47,25 @@ function MulMatrix(a: number[][], b: number[][]): number[][] {
 
 	return res;
 }
+
+export function Determinant(a: number[][]): number {
+	const size = a.length;
+
+	if (size < 2) {
+		return 1;
+	} else if (size == 2) {
+		return a[0][0] * a[1][1] - a[1][0] * a[0][1];
+	}
+
+	let det = 0;
+	for (let i = 0; i < size; i++) {
+		det += (i % 2 == 0 ? 1 : -1) * a[0][i] * Determinant(Cofactor(a, 0, i));
+	}
+
+	return det;
+}
+
+function Cofactor(a: number[][], row: number, col: number): number[][] {
+	return [...a].filter((_, i) => i !== row)
+				.map(cols => cols.filter((_, i) => i !== col))
+}
