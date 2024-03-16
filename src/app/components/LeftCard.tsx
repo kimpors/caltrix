@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Card from "./Card/Card";
 import Matrix from "./Matrix/Matrix";
 import Option from "./Option/Option";
+import More from "./More/More";
 
 export default function LeftCart() {
 	const [more, setMore] = useState(false);
@@ -21,7 +22,7 @@ export default function LeftCart() {
 				<button className='shadow' onClick={ () => setMore(!more)}>=</button>
 			</section>
 			{more 
-				? <Card><h1>More</h1></Card>
+				? <Card><More matrixName="left"/></Card>
 				: (
 					<Card>
 						<Matrix name="left" size={4}/>

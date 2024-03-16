@@ -30,7 +30,6 @@ export default function MidlOption() {
 			<button onClick={() => {sum()}}>+</button>
 			<button onClick={() => {sub()}}>-</button>
 			<button onClick={() => {mul()}}>*</button>
-			<button>^</button>
 		</Option>
 	)
 }
