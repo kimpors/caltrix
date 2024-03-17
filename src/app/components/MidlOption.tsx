@@ -22,7 +22,11 @@ export default function MidlOption() {
 				break;
 
 			case 'mul':
-				results.push(Mul(left, right).toString());
+				if (localStorage.getItem("isNumber") || false as boolean) {
+					results.push(Mul(left, JSON.parse(localStorage.getItem("number") || "0") as number).toString());
+				} else {
+					results.push(Mul(left, right).toString());
+				}
 				break;
 		}
 

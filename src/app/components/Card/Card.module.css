@@ -9,3 +9,7 @@
 .round {
 	border-radius: 0px 16px 16px 16px;
 }
+
+.card input {
+	@apply w-max self-center p-2
+}
