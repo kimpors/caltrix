@@ -65,7 +65,7 @@ export function Determinant(a: number[][]): number {
 	return det;
 }
 
-function Cofactor(a: number[][], row: number, col: number): number[][] {
+export function Cofactor(a: number[][], row: number, col: number): number[][] {
 	return [...a].filter((_, i) => i !== row)
 				.map(cols => cols.filter((_, i) => i !== col))
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import { Cofactor } from "@/app/script";
 import styles from "./Controller.module.css";
 import Option from "../Option/Option"
 import { useRouter } from "next/navigation";
@@ -10,10 +11,21 @@ interface Props {
 
 export default function Controller({ name }:Props) {
 	const router = useRouter();
-	const matrix = JSON.parse(localStorage.getItem(name) || '{}') as number[][];
+	let matrix = JSON.parse(localStorage.getItem(name) || '{}') as number[][];
 
 	function add() {
-		
+		if (matrix.length < 7) {
+			let m = [...matrix];
+
+			for (let y = 0; y < matrix.length; y++) {
+				m[y].push(0);
+			}
+
+			m.push(Array(matrix.length + 1).fill(0));
+			
+			localStorage.setItem(name, JSON.stringify(m));
+			router.refresh();
+		}
 	}
 
 	function clear() {
@@ -28,7 +40,11 @@ export default function Controller({ name }:Props) {
 	}
 
 	function sub() {
-		
+		if (matrix.length > 2) {
+			matrix = Cofactor(matrix, matrix.length - 1, matrix.length - 1)
+			localStorage.setItem(name, JSON.stringify(matrix));
+			router.refresh();
+		}
 	}
 
 	return (

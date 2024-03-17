@@ -5,6 +5,7 @@ import Card from "./Card/Card"
 import More from "./More/More"
 import Matrix from "./Matrix/Matrix"
 import Controller from "./Controller/Controller"
+import './../style.css'
 
 interface Props {
 	name: string
@@ -34,7 +35,7 @@ export default function MatrixCard({ name, withNumberTab }:Props) {
 					: (
 						<>
 							{number
-								? <input onChange={ event => { setValue(event.target.valueAsNumber) }} type="number" value={ value } />
+								? <input className="bg-ctp-flamingo" onChange={ event => { setValue(event.target.valueAsNumber) }} type="number" value={ value } />
 	 							: <Matrix name={ name } />
 							}
 							<Controller name={ name }/>

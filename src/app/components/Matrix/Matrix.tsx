@@ -18,7 +18,7 @@ export default function Matrix({ name }:Props) {
 			setMatrix(res);
 		}
 
-	}, [localStorage.getItem(name)]);
+	}, [localStorage.getItem(name), matrix.length]);
 
 	const handle = (y: number, x: number, value: number) => {
 		const res = [...matrix];
@@ -29,7 +29,7 @@ export default function Matrix({ name }:Props) {
 	}
 
 	return (
-		<section className={ styles.matrix + " grid-cols-3"}>
+		<section style={{gridTemplateRows: `repeat(${matrix.length}, minmax(0, 1fr))`, gridTemplateColumns: `repeat(${matrix.length}, minmax(0, 1fr))`}} className={ styles.matrix }>
 			{matrix.map((row, y) => row.map((num, x) =>
 				<input key={ count++ } onChange={ event => { handle(y, x, event.target.valueAsNumber) }} type="number" value={ num }/>
 			))}
