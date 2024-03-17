@@ -1,7 +1,7 @@
 .footer {
-	@apply flex flex-col bg-ctp-mantle text-ctp-text object-bottom justify-center py-10 row-span-2
+	@apply flex flex-col bg-ctp-mantle text-ctp-text items-center row-end-auto
 }
 
 .footer h1 {
-	@apply text-6xl text-ctp-subtext0 font-bold
+	@apply text-6xl text-ctp-subtext0 font-bold my-10
 }

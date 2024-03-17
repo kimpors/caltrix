@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import styles from './Result.module.css'
 
 export default function Result() {
 	const [results, setResults] = useState([] as string[]);
@@ -11,11 +12,10 @@ export default function Result() {
 		if (res) {
 			setResults(res);
 		}
-	}, [])
-
+	}, [localStorage.getItem("results")])
 
 	return(
-		<article>
+		<article className={ styles.result }>
 			{results.map((result, i) => 
 				<section key={i}>
 					{ result }

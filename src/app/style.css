@@ -19,14 +19,15 @@ html, body, main {
 }
 
 body {
-	@apply grid grid-rows-8 
+	@apply grid grid-flow-row
 }
 
 html {
 	transition: background-color 250ms ease-out;
+	overflow-y: scroll;
 }
 main {
-	@apply grid grid-cols-3 gap-10 p-10 row-span-5 items-center justify-items-center
+	@apply grid grid-cols-3 gap-10 p-10 row-span-3 min-h-max items-center justify-items-center
 }
 
 input::-webkit-outer-spin-button,
