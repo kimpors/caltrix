@@ -8,18 +8,33 @@
 }
 
 .bookmark a {
-	@apply block
+	@apply block text-ctp-surface0
 }
 
-.pink {
+.bookmark a {
+	color: var(--primary);
+	filter: brightness(50%);
+}
+
+.light {
 	@apply bg-ctp-surface0
-} 
-
-.pink {
-	color: #876F6F
 }
 
-.dark {
-	@apply bg-ctp-rosewater text-ctp-surface0
-} 
 
+.pink {
+	@apply bg-ctp-flamingo text-ctp-surface0
+}
+
+.blue {
+	@apply bg-ctp-blue text-ctp-surface0
+}
+
+.green {
+	@apply bg-ctp-green
+
+}
+
+.gray {
+	@apply bg-ctp-subtext0
+
+}

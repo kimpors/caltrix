@@ -48,6 +48,10 @@
 	background-color: var(--primary);
 }
 
+.dark {
+	--primary: #363a4f;
+}
+
 html, body, main {
 	@apply h-full
 }

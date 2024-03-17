@@ -18,11 +18,25 @@ export default function Bookmark({ next_url, previous_url }: Props) {
 
 	useEffect(() => {
 		if (pathname === "/settings") {
-			setStyle(styles.dark);
+			switch (localStorage.getItem("prev-theme") || "pink") {
+				case 'pink':
+					setStyle(styles.pink);
+					break;
+				case 'blue':
+					setStyle(styles.blue);
+					break;
+				case 'green':
+					setStyle(styles.green);
+					break;
+				case 'gray':
+					setStyle(styles.gray);
+					break;
+			}
+
 			localStorage.setItem("prev-theme", theme || "pink");
 			setTheme("dark");
 		} else {
-			setStyle(styles.pink);
+			setStyle(styles.light)
 			setTheme(localStorage.getItem("prev-theme") || "pink");
 		}
 	}, [pathname]);
