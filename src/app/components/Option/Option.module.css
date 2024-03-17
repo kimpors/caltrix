@@ -1,5 +1,9 @@
 .option {
-	@apply flex bg-ctp-peach rounded-3xl h-fit justify-self-center self-center
+	@apply flex rounded-3xl h-fit justify-self-center self-center
+}
+
+.option {
+	background-color: var(--accent);
 }
 
 .option button {

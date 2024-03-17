@@ -1,5 +1,9 @@
 .card {
-	@apply flex flex-col bg-ctp-red w-full h-full p-5
+	@apply flex flex-col w-full h-full p-5
+}
+
+.card {
+	background-color: var(--secondary);
 }
 
 .round {

@@ -2,16 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--primary: #f0c6c6; 
+	--secondary: #ed8796;
+	--accent:  #f5a97f;
+}
+
 .dark {
 	@apply bg-ctp-surface0
 }
 
+.dark footer {
+	display: none;
+}
+
 .pink {
-	@apply bg-ctp-flamingo
+	--primary: #f0c6c6;
+	--secondary: #ed8796;
+	--accent:  #f5a97f;
+
+	background-color: var(--primary);
 }
 
 .blue {
-	@apply bg-ctp-blue
+	--primary: #8aadf4;
+	--secondary: #7dc4e4;
+	--accent:  #b7bdf8;
+
+	background-color: var(--primary);
+}
+
+.green {
+	--primary: #a6da95;
+	--secondary: #8bd5ca;
+	--accent:  #eed49f;
+
+	background-color: var(--primary);
+}
+
+.gray {
+	--primary: #a5adcb;
+	--secondary: #939ab7;
+	--accent:  #cad3f5;
+
+	background-color: var(--primary);
 }
 
 html, body, main {
@@ -45,13 +79,13 @@ input[type=number] {
 }
 
 .tab button {
-	@apply mr-0.5 px-5 pt-1 bg-ctp-red text-2xl font-bold 
+	@apply mr-0.5 px-5 pt-1 text-2xl font-bold 
 }
 
 .tab button {
+	background-color: var(--secondary);
 	border-radius: 16px 16px 0px 0px;
 }
-
 
 .shadow {
 	box-shadow: 0px 4px 4px 3px rgb(0 0 0 / 25%);

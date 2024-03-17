@@ -18,5 +18,5 @@ export default function Provider({ children }:Props) {
 		return null;
 	}
 
-	return <ThemeProvider attribute="class" defaultTheme="pink" themes={ ['blue', 'dark', 'pink']} >{ children }</ThemeProvider>
+	return <ThemeProvider attribute="class" defaultTheme="pink" themes={ ['gray', 'green', 'blue', 'dark', 'pink']} >{ children }</ThemeProvider>
 }

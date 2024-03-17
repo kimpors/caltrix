@@ -3,11 +3,10 @@
 }
 
 .result > section {
-	@apply m-10 p-5 font-bold text-ctp-base bg-ctp-flamingo 
+	@apply m-10 p-5 font-bold text-ctp-base
 }
-
 
 .result > section {
 	box-shadow: inset 0px 4px 4px 5px rgb(0 0 0 / 25%);
+	background-color: var(--primary);
 }
-

@@ -10,10 +10,10 @@ export default {
     theme: {
         extend: {
 			colors: {
-				blue: {
-					color: '#8d6e63'
-				},
-			},
+				'pink': {
+					primary: '#000'
+				}
+			}
 		},
     },
     plugins: [

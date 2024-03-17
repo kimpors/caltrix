@@ -19,15 +19,16 @@ export default function Bookmark({ next_url, previous_url }: Props) {
 	useEffect(() => {
 		if (pathname === "/settings") {
 			setStyle(styles.dark);
+			localStorage.setItem("prev-theme", theme || "pink");
 			setTheme("dark");
 		} else {
 			setStyle(styles.pink);
-			setTheme("pink");
+			setTheme(localStorage.getItem("prev-theme") || "pink");
 		}
 	}, [pathname]);
 	
 	return (
-		<section className={ styles.bookmark + " " + style }>
+		<section className={`${styles.bookmark} ${style}`}>
 			<Link href={ theme !== 'dark' ? next_url : previous_url }>V</Link>
 		</section>
 	)

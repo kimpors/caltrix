@@ -3,5 +3,9 @@
 }
 
 .matrix input[type=number] {
-	@apply w-12 h-min p-1 bg-ctp-flamingo
+	@apply w-12 h-min p-1
+}
+
+.matrix input[type=number] {
+	background-color: var(--primary);
 }

@@ -33,7 +33,6 @@ export default function More({ matrixName }:Props) {
 			<button onClick={ () => console.log("det", Determinant(matrix))} className="shadow">Determinant</button>
 			<button>Reverse</button>
 			<button onClick={ () => swap() }>Swap</button>
-			<button>From Json</button>
 		</section>
 	)
 }
