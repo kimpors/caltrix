@@ -13,8 +13,6 @@ export default function More({ matrixName }:Props) {
 	let matrix = JSON.parse(localStorage.getItem(matrixName) || '{}') as number[][];
 	let other = [] as number[][];
 
-
-
 	const otherName = matrixName == "left" ? "right" : "left";
 	other = JSON.parse(localStorage.getItem(otherName) || '{}') as number[][];
 
@@ -28,9 +26,25 @@ export default function More({ matrixName }:Props) {
 		router.refresh();
 	}
 
+	function handle(operation: string) {
+		let results = JSON.parse(localStorage.getItem("results") || '{}') as string[];
+
+		switch (operation) {
+			case "det":
+				results.push(Determinant(matrix).toString());
+				break;
+
+			case 'rev':
+				break;
+		}
+
+		localStorage.setItem("results", JSON.stringify(results));
+		router.refresh();
+	}
+
 	return (
 		<section className={ styles.more }>
-			<button onClick={ () => console.log("det", Determinant(matrix))} className="shadow">Determinant</button>
+			<button onClick={ () => handle("det") } className="shadow">Determinant</button>
 			<button>Reverse</button>
 			<button onClick={ () => swap() }>Swap</button>
 		</section>

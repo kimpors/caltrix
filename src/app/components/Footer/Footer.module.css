@@ -2,6 +2,6 @@
 	@apply flex flex-col bg-ctp-mantle text-ctp-text items-center row-end-auto
 }
 
-.footer h1 {
+.footer > h1 {
 	@apply text-6xl text-ctp-subtext0 font-bold my-10
 }
