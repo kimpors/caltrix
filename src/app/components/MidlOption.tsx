@@ -3,15 +3,22 @@
 import Option from "./Option/Option";
 import { Sum, Sub, Mul } from "../script";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function MidlOption() {
+interface Props {
+	isNumber: boolean
+	setIsNumber: (isNumber: boolean) => void
+}
+
+export default function MidlOption({ isNumber, setIsNumber }:Props) {
 	const router = useRouter();
-	const [isNumber, setIsNumber] = useState(false);
+	// const [number, setNumber] = useState(isNumber);
 
-	useEffect(() => {
-		setIsNumber(JSON.parse(localStorage.getItem("isNumber") || "false") as boolean)
-	}, [localStorage.getItem("isNumber")])
+	// useEffect(() => {
+	// 	// setNumber(JSON.parse(localStorage.getItem("isNumber") || "false") as boolean)
+	// 	// setNumber(!is);
+	// 	// setIsNumber(!isNumber);
+	// }, [isNumber])
 
 	function handle(operation: string) {
 		let results = JSON.parse(localStorage.getItem("results") || '{}') as string[];
@@ -28,7 +35,7 @@ export default function MidlOption() {
 				break;
 
 			case 'mul':
-				if (localStorage.getItem("isNumber") || false as boolean) {
+				if (isNumber) {
 					results.push(Mul(left, JSON.parse(localStorage.getItem("number") || "0") as number).toString());
 				} else {
 					results.push(Mul(left, right).toString());

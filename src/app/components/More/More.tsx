@@ -5,24 +5,22 @@ import styles from './More.module.css';
 import { useRouter } from 'next/navigation';
 
 interface Props {
-	matrixName: string
+	name: string
+	swapTo: string
 }
 
-export default function More({ matrixName }:Props) {
+export default function More({ name, swapTo }:Props) {
 	const router = useRouter();
-	let matrix = JSON.parse(localStorage.getItem(matrixName) || '{}') as number[][];
-	let other = [] as number[][];
-
-	const otherName = matrixName == "left" ? "right" : "left";
-	other = JSON.parse(localStorage.getItem(otherName) || '{}') as number[][];
+	let matrix = JSON.parse(localStorage.getItem(name) || '{}') as number[][];
+	let other = JSON.parse(localStorage.getItem(swapTo) || '{}') as number[][];
 
 	function swap() {
 		let temp = [...other];
 		other = [...matrix];
 		matrix = [...temp];
 
-		localStorage.setItem(matrixName, JSON.stringify(matrix));
-		localStorage.setItem(otherName, JSON.stringify(other));
+		localStorage.setItem(name, JSON.stringify(matrix));
+		localStorage.setItem(swapTo, JSON.stringify(other));
 		router.refresh();
 	}
 

@@ -1,50 +1,44 @@
-'use client'
+"use client"
 
 import { useEffect, useState } from "react"
 import Card from "./Card/Card"
 import More from "./More/More"
 import Matrix from "./Matrix/Matrix"
 import Controller from "./Controller/Controller"
-import { useRouter } from "next/navigation"
 
 interface Props {
 	name: string
 	withNumberTab: boolean
+	isNumber: boolean,
+	setIsNumber: (isNumber: boolean) => void
 }
 
-export default function MatrixCard({ name, withNumberTab }:Props) {
-	const [more, setMore] = useState(false);
-	const [number, setNumber] = useState(false);
-	const [value, setValue] = useState(0);
-	const router = useRouter();
+export default function MatrixCard({ name, withNumberTab, isNumber, setIsNumber }:Props) {
+	const [isMore, setIsMore] = useState(false);
+	const [number, setNumber] = useState(0);
 
 	useEffect(() => {
-		localStorage.setItem("number", JSON.stringify(value));
-	}, [value])
-
-	function handle(isNumber: boolean) {
-		setNumber(isNumber);
-		localStorage.setItem("isNumber", JSON.stringify(isNumber));
-	}
+		localStorage.setItem("number", JSON.stringify(number));
+	}, [number])
 
 	return (
 		<article className="container">
 			<section className='tab'>
-				<button style={more ? {} : {filter: "brightness(90%)"}} className='shadow' onClick={ () => setMore(!more)}>=</button>
+				<button style={isMore ? {} : {filter: "brightness(90%)"}}className='shadow' onClick={ () => setIsMore(!isMore)}>=</button>
 				{withNumberTab && 
 					<>
-						<button style={number ? {filter: "brightness(90%)"} : {}} className='shadow' onClick={ () => { handle(false); router.refresh(); }}>M</button>
-						<button style={number ? {} : {filter: "brightness(90%)"}} className='shadow' onClick={ () => { handle(true); router.refresh(); }}>N</button>
+						<button style={isNumber ? {filter: "brightness(90%)"} : {}} className='shadow' onClick={ () => setIsNumber(false) }>M</button>
+						<button style={isNumber ? {} : {filter: "brightness(90%)"}} className='shadow' onClick={ () => setIsNumber(true) }>N</button>
 					</>
 				}
 			</section>
 			<Card>
-				{more
-					? <More matrixName={name}/>
+				{isMore
+					? <More name={ name } swapTo={ name === "left" ? "right" : "left" }/>
 					: (
 						<>
-							{number
-								? <input style={{backgroundColor: "var(--primary)"}} onChange={ event => setValue(event.target.valueAsNumber) } type="number" value={ value } />
+							{isNumber
+								? <input style={{backgroundColor: "var(--primary)"}} onChange={ event => setNumber(event.target.valueAsNumber) } type="number" value={ number } />
 	 							: 
 								<> 
 									<Matrix name={ name } />
