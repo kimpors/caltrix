@@ -3,9 +3,15 @@
 import Option from "./Option/Option";
 import { Sum, Sub, Mul } from "../script";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function MidlOption() {
 	const router = useRouter();
+	const [isNumber, setIsNumber] = useState(false);
+
+	useEffect(() => {
+		setIsNumber(JSON.parse(localStorage.getItem("isNumber") || "false") as boolean)
+	}, [localStorage.getItem("isNumber")])
 
 	function handle(operation: string) {
 		let results = JSON.parse(localStorage.getItem("results") || '{}') as string[];
@@ -36,9 +42,15 @@ export default function MidlOption() {
 
 	return(
 		<Option className="flex-col p-5">
-			<button onClick={() => {handle("sum")}}>+</button>
-			<button onClick={() => {handle("sub")}}>-</button>
-			<button onClick={() => {handle("mul")}}>*</button>
+			{!isNumber 
+			? 
+			<> 
+				<button onClick={() => handle("sum")}>+</button>
+				<button onClick={() => handle("sub")}>-</button>
+			</>
+			: <></>
+			}
+			<button onClick={() => handle("mul")}>*</button>
 		</Option>
 	)
 }
