@@ -1,27 +1,20 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Card from "./Card/Card"
 import More from "./More/More"
 import Matrix from "./Matrix/Matrix"
 import Controller from "./Controller/Controller"
+import { useStateContext } from "./StateContext"
 
 interface Props {
 	name: string
 	withNumberTab: boolean
-	isNumber: boolean,
-	setIsNumber: (isNumber: boolean) => void
-	results: string[],
-	setResults: (results: string[]) => void
 }
 
-export default function MatrixCard({ name, withNumberTab, isNumber, setIsNumber, results, setResults }:Props) {
+export default function MatrixCard({ name, withNumberTab }:Props) {
 	const [isMore, setIsMore] = useState(false);
-	const [number, setNumber] = useState(0);
-
-	useEffect(() => {
-		localStorage.setItem("number", JSON.stringify(number));
-	}, [number])
+	const { number, setNumber, isNumber, setIsNumber, results, setResults } = useStateContext();
 
 	return (
 		<article className="container">
@@ -39,7 +32,7 @@ export default function MatrixCard({ name, withNumberTab, isNumber, setIsNumber,
 					? <More name={ name } swapTo={ name === "left" ? "right" : "left" } results={ results } setResults={ setResults }/>
 					: (
 						<>
-							{isNumber
+							{withNumberTab && isNumber
 								? <input style={{backgroundColor: "var(--primary)"}} onChange={ event => setNumber(event.target.valueAsNumber) } type="number" value={ number } />
 	 							: 
 								<> 

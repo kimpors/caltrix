@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark {
-	@apply bg-ctp-surface0
-}
-
-.dark footer {
-	display: none;
-}
 
 .pink {
 	--primary: #f0c6c6;
@@ -43,6 +36,10 @@
 }
 
 .dark {
+	@apply bg-ctp-surface0
+}
+
+.dark {
 	--primary: #363a4f;
 }
 
@@ -58,6 +55,7 @@ html {
 	transition: background-color 250ms ease-out;
 	overflow-y: scroll;
 }
+
 main {
 	@apply grid grid-cols-3 gap-10 p-10 row-span-3 min-h-max items-center justify-items-center
 }
@@ -76,6 +74,10 @@ input[type=number] {
 	@apply flex flex-col min-w-full 
 }
 
+.container {
+	transition: all 300ms ease-out;
+}
+
 .tab button {
 	@apply mr-0.5 px-5 pt-1 text-2xl font-bold 
 }
@@ -83,6 +85,7 @@ input[type=number] {
 .tab button {
 	background-color: var(--secondary);
 	border-radius: 16px 16px 0px 0px;
+	transition: filter 200ms ease-out;
 }
 
 .shadow {

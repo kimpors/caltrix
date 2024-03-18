@@ -3,18 +3,19 @@
 import { Determinant, Inverse } from '@/app/script';
 import styles from './More.module.css';
 import { useRouter } from 'next/navigation';
+import { useStateContext } from '../StateContext';
 
 interface Props {
 	name: string
 	swapTo: string
-	results: string[],
-	setResults: (results: string[]) => void
 }
 
-export default function More({ name, swapTo, results, setResults }:Props) {
+export default function More({ name, swapTo }:Props) {
 	const router = useRouter();
 	let matrix = JSON.parse(localStorage.getItem(name) || '{}') as number[][];
 	let other = JSON.parse(localStorage.getItem(swapTo) || '{}') as number[][];
+
+	const { results, setResults } = useStateContext();
 
 	function swap() {
 		let temp = [...other];

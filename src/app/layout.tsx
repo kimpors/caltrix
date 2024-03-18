@@ -5,7 +5,10 @@ import Bookmark from "./components/Bookmark/Bookmark";
 import Provider from "./components/Provider";
 import "./style.css";
 
+import StateProvider from "./components/StateContext";
+
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Caltrix",
@@ -27,7 +30,9 @@ export default function RootLayout({
 				</Header>
 				<Bookmark next_url="/settings" previous_url="/" />
 			</article>
-			{ children }
+			<StateProvider>
+				{ children }
+			</StateProvider>
 		</Provider>
 	  </body>
     </html>

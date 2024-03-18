@@ -1,10 +1,15 @@
 .bookmark {
-	@apply h-12 w-16 text-center font-bold text-3xl mr-2 self-end
+	@apply h-10 w-16 text-center font-bold text-3xl mr-2 self-end
+}
+
+.bookmark:hover {
+	@apply h-12 
 }
 
 .bookmark {
 	border-radius: 0px 0px 16px 16px;
-	transition: background-color 250ms ease-out
+	transition: background-color 250ms ease-out;
+	transition: height 200ms ease-out;
 }
 
 .bookmark a {
@@ -19,7 +24,6 @@
 .light {
 	@apply bg-ctp-surface0
 }
-
 
 .pink {
 	@apply bg-ctp-flamingo text-ctp-surface0

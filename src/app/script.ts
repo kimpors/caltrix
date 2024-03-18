@@ -1,3 +1,15 @@
+export class State {
+	name: string;
+	number: number;
+	withNumberTab: boolean;
+
+	constructor (name: string, withNumberTab: boolean) {
+		this.name = name;
+		this.number = 0;
+		this.withNumberTab = withNumberTab;
+	}
+}
+
 export function Sum(a: number[][], b: number[][]): number[][] {
 	const res = [...a];
 

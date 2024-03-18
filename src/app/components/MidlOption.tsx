@@ -3,14 +3,10 @@
 import Option from "./Option/Option";
 import { Sum, Sub, Mul } from "../script";
 
-interface Props {
-	number: number,
-	results: string[]
-	isNumber: boolean
-	setResults: (results: string[]) => void
-}
+import { useStateContext } from "./StateContext";
 
-export default function MidlOption({ isNumber, number, results, setResults }:Props) {
+export default function MidlOption() {
+	const { isNumber, number, results, setResults } = useStateContext();
 
 	function handle(operation: string) {
 		const left = JSON.parse(localStorage.getItem("left") || '{}') as number[][];
@@ -27,7 +23,7 @@ export default function MidlOption({ isNumber, number, results, setResults }:Pro
 
 			case 'mul':
 				if (isNumber) {
-					setResults([...results, Mul(left, JSON.parse(localStorage.getItem("number") || "0") as number).toString()]);
+					setResults([...results, Mul(left, number).toString()]);
 				} else {
 					setResults([...results, Mul(left, right).toString()]);
 				}

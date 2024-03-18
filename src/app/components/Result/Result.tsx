@@ -1,13 +1,11 @@
 "use client"
 
+import { useStateContext } from '../StateContext'
 import styles from './Result.module.css'
 
-interface Props {
-	results: string[]
-	setResults: (results: string[]) => void
-}
+export default function Result() {
+	const { results, setResults } = useStateContext();
 
-export default function Result({ results, setResults }:Props) {
 	function Clear() {
 		setResults([]);
 	}

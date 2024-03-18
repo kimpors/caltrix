@@ -22,6 +22,8 @@ export default function Controller({ name }:Props) {
 			}
 
 			m.push(Array(matrix.length + 1).fill(0));
+
+			// setMatrix(m);
 			
 			localStorage.setItem(name, JSON.stringify(m));
 			router.refresh();
@@ -43,6 +45,7 @@ export default function Controller({ name }:Props) {
 		if (matrix.length > 2) {
 			matrix = Cofactor(matrix, matrix.length - 1, matrix.length - 1)
 			localStorage.setItem(name, JSON.stringify(matrix));
+			// setMatrix(matrix);
 			router.refresh();
 		}
 	}

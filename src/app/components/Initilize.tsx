@@ -4,17 +4,12 @@ import { useEffect } from "react";
 
 export default function Initilize() {
 	useEffect(() => {
-		if (localStorage.getItem("left")) {
-			return;
+		if (!localStorage.getItem("left")) {
+			localStorage.setItem("left", JSON.stringify(Array<Array<number>>(3).fill(Array(3).fill(0))));
+			localStorage.setItem("right", JSON.stringify(Array<Array<number>>(3).fill(Array(3).fill(0))));
+			localStorage.setItem("prev-theme", JSON.stringify("pink"));
 		}
-
-		localStorage.setItem("left", JSON.stringify(Array<Array<number>>(3).fill(Array(3).fill(0))));
-		localStorage.setItem("right", JSON.stringify(Array<Array<number>>(3).fill(Array(3).fill(0))));
-		localStorage.setItem("results", JSON.stringify([] as string[]));
-		localStorage.setItem("number", JSON.stringify(0));
-		localStorage.setItem("isNumber", JSON.stringify(false));
-		localStorage.setItem("prev-theme", JSON.stringify("pink"));
 	}, [])
 
-	return <></>;
+	return null;
 }
