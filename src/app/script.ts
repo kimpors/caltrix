@@ -66,7 +66,40 @@ export function Determinant(a: number[][]): number {
 }
 
 export function Inverse(a: number[][]): number[][] {
+	const det = Determinant(a);
 
+	if (det === 0) {
+		return [];
+	}
+
+	const size = a.length;
+	const m = [...a];
+	const temp = Cofactor(m, size - 1, size - 1);
+
+	for (let i = 0; i < size; i++) {
+		for (let j = 0; j < size; j++) {
+			for (let y = 0, suby = 0; y < size; y++) {
+				if (y == i) {
+					continue;
+				}
+
+				for (let x = 0, subx = 0; x < size; x++) {
+					if (x == j) {
+						continue;
+					}
+
+					temp[suby][subx] = a[y][x];
+					subx++;
+				}
+
+				suby++;
+			}
+
+			m[i][j] = ((i + j) % 2 == 0 ? 1 : -1) * Determinant(temp);
+		}
+	}
+
+	return Mul(m, 1 / det);
 }
 
 export function Cofactor(a: number[][], row: number, col: number): number[][] {

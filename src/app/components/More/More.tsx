@@ -1,6 +1,6 @@
 "use client"
 
-import { Determinant } from '@/app/script';
+import { Determinant, Inverse } from '@/app/script';
 import styles from './More.module.css';
 import { useRouter } from 'next/navigation';
 
@@ -35,6 +35,7 @@ export default function More({ matrixName }:Props) {
 				break;
 
 			case 'rev':
+				results.push(Inverse(matrix).map(row => row.map(num => num.toFixed(3))).toString());
 				break;
 		}
 
@@ -45,7 +46,7 @@ export default function More({ matrixName }:Props) {
 	return (
 		<section className={ styles.more }>
 			<button onClick={ () => handle("det") } className="shadow">Determinant</button>
-			<button>Reverse</button>
+			<button onClick={ () => handle("rev") }>Reverse</button>
 			<button onClick={ () => swap() }>Swap</button>
 		</section>
 	)
