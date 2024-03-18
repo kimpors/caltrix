@@ -14,7 +14,7 @@ interface Props {
 
 export default function MatrixCard({ name, withNumberTab }:Props) {
 	const [isMore, setIsMore] = useState(false);
-	const { number, setNumber, isNumber, setIsNumber, results, setResults } = useStateContext();
+	const { number, setNumber, isNumber, setIsNumber } = useStateContext();
 
 	return (
 		<article className="container">
@@ -29,7 +29,7 @@ export default function MatrixCard({ name, withNumberTab }:Props) {
 			</section>
 			<Card>
 				{isMore
-					? <More name={ name } swapTo={ name === "left" ? "right" : "left" } results={ results } setResults={ setResults }/>
+					? <More />
 					: (
 						<>
 							{withNumberTab && isNumber
