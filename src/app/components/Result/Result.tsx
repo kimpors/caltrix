@@ -1,24 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import styles from './Result.module.css'
-import { useRouter } from "next/navigation";
 
-export default function Result() {
-	const [results, setResults] = useState([] as string[]);
-	const router = useRouter();
-	
-	useEffect(() => {
-		const res = JSON.parse(localStorage.getItem("results") || '{}') as string[];
+interface Props {
+	results: string[]
+	setResults: (results: string[]) => void
+}
 
-		if (res) {
-			setResults(res);
-		}
-	}, [localStorage.getItem("results")])
-
+export default function Result({ results, setResults }:Props) {
 	function Clear() {
-		localStorage.setItem("results", "[]");
-		router.refresh();
+		setResults([]);
 	}
 
 	if (results.length === 0) {

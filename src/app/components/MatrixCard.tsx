@@ -11,9 +11,11 @@ interface Props {
 	withNumberTab: boolean
 	isNumber: boolean,
 	setIsNumber: (isNumber: boolean) => void
+	results: string[],
+	setResults: (results: string[]) => void
 }
 
-export default function MatrixCard({ name, withNumberTab, isNumber, setIsNumber }:Props) {
+export default function MatrixCard({ name, withNumberTab, isNumber, setIsNumber, results, setResults }:Props) {
 	const [isMore, setIsMore] = useState(false);
 	const [number, setNumber] = useState(0);
 
@@ -34,7 +36,7 @@ export default function MatrixCard({ name, withNumberTab, isNumber, setIsNumber 
 			</section>
 			<Card>
 				{isMore
-					? <More name={ name } swapTo={ name === "left" ? "right" : "left" }/>
+					? <More name={ name } swapTo={ name === "left" ? "right" : "left" } results={ results } setResults={ setResults }/>
 					: (
 						<>
 							{isNumber

@@ -2,49 +2,37 @@
 
 import Option from "./Option/Option";
 import { Sum, Sub, Mul } from "../script";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
 
 interface Props {
+	number: number,
+	results: string[]
 	isNumber: boolean
-	setIsNumber: (isNumber: boolean) => void
+	setResults: (results: string[]) => void
 }
 
-export default function MidlOption({ isNumber, setIsNumber }:Props) {
-	const router = useRouter();
-	// const [number, setNumber] = useState(isNumber);
-
-	// useEffect(() => {
-	// 	// setNumber(JSON.parse(localStorage.getItem("isNumber") || "false") as boolean)
-	// 	// setNumber(!is);
-	// 	// setIsNumber(!isNumber);
-	// }, [isNumber])
+export default function MidlOption({ isNumber, number, results, setResults }:Props) {
 
 	function handle(operation: string) {
-		let results = JSON.parse(localStorage.getItem("results") || '{}') as string[];
 		const left = JSON.parse(localStorage.getItem("left") || '{}') as number[][];
 		const right = JSON.parse(localStorage.getItem("right") || '{}') as number[][];
 
 		switch (operation) {
 			case "sum":
-				results.push(Sum(left, right).toString());
+				setResults([...results, Sum(left, right).toString()]);
 				break;
 
 			case 'sub':
-				results.push(Sub(left, right).toString());
+				setResults([...results, Sub(left, right).toString()]);
 				break;
 
 			case 'mul':
 				if (isNumber) {
-					results.push(Mul(left, JSON.parse(localStorage.getItem("number") || "0") as number).toString());
+					setResults([...results, Mul(left, JSON.parse(localStorage.getItem("number") || "0") as number).toString()]);
 				} else {
-					results.push(Mul(left, right).toString());
+					setResults([...results, Mul(left, right).toString()]);
 				}
 				break;
 		}
-
-		localStorage.setItem("results", JSON.stringify(results));
-		router.refresh();
 	}
 
 	return(

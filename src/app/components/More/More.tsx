@@ -7,9 +7,11 @@ import { useRouter } from 'next/navigation';
 interface Props {
 	name: string
 	swapTo: string
+	results: string[],
+	setResults: (results: string[]) => void
 }
 
-export default function More({ name, swapTo }:Props) {
+export default function More({ name, swapTo, results, setResults }:Props) {
 	const router = useRouter();
 	let matrix = JSON.parse(localStorage.getItem(name) || '{}') as number[][];
 	let other = JSON.parse(localStorage.getItem(swapTo) || '{}') as number[][];
@@ -25,20 +27,16 @@ export default function More({ name, swapTo }:Props) {
 	}
 
 	function handle(operation: string) {
-		let results = JSON.parse(localStorage.getItem("results") || '{}') as string[];
-
 		switch (operation) {
 			case "det":
-				results.push(Determinant(matrix).toString());
+				setResults([...results, Determinant(matrix).toString()]);
 				break;
 
 			case 'rev':
-				results.push(Inverse(matrix).map(row => row.map(num => num.toFixed(3))).toString());
+				setResults([...results, Inverse(matrix).map(row => row.map(num => num.toFixed(3))).toString() ]);
 				break;
 		}
 
-		localStorage.setItem("results", JSON.stringify(results));
-		router.refresh();
 	}
 
 	return (
