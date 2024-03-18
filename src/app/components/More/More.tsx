@@ -4,18 +4,25 @@ import { Determinant, Inverse } from '@/app/script';
 import styles from './More.module.css';
 import { useStateContext } from '../StateContext';
 
-export default function More() {
-	let matrix = JSON.parse(localStorage.getItem("left") || '{}') as number[][];
+enum Operation {
+	DET,
+	REV
+}
 
+interface Props {
+	matrix: number[][]
+}
+
+export default function More({ matrix }:Props) {
 	const { results, setResults } = useStateContext();
 
-	function handle(operation: string) {
+	function handle(operation: Operation) {
 		switch (operation) {
-			case "det":
+			case Operation.DET:
 				setResults([...results, Determinant(matrix).toString()]);
 				break;
 
-			case 'rev':
+			case Operation.REV:
 				setResults([...results, Inverse(matrix).map(row => row.map(num => num.toFixed(3))).toString() ]);
 				break;
 		}
@@ -23,8 +30,8 @@ export default function More() {
 
 	return (
 		<section className={ styles.more }>
-			<button onClick={ () => handle("det") } className="shadow">Determinant</button>
-			<button onClick={ () => handle("rev") }>Reverse</button>
+			<button onClick={ () => handle(Operation.DET) } className="shadow">Determinant</button>
+			<button onClick={ () => handle(Operation.REV) }>Reverse</button>
 		</section>
 	)
 }

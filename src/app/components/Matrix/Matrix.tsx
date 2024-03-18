@@ -1,31 +1,21 @@
 'use client'
 
-import { useEffect, useState } from 'react';
 import styles from './Matrix.module.css'
 
 interface Props {
 	name: string
+	matrix: number[][]
+	setMatrix: (matrix: number[][]) => void
 }
 
-export default function Matrix({ name }:Props) {
+export default function Matrix({ name, matrix, setMatrix }:Props) {
 	let count = 0;
-	const [matrix, setMatrix] = useState([] as number[][])
-
-	useEffect(() => {
-		const res = JSON.parse(localStorage.getItem(name) || '{}') as number[][];
-
-		if (res) {
-			setMatrix(res);
-		}
-
-	}, [localStorage.getItem(name)]);
-
 
 	const handle = (y: number, x: number, value: number) => {
-		const res = [...matrix];
-		res[y][x] = value;
-		setMatrix(res);
-		localStorage.setItem(name, JSON.stringify(res));
+		let m = [...matrix];
+		m[y][x] = value;
+		localStorage.setItem(name, JSON.stringify(m));
+		setMatrix(m);
 	}
 
 	return (

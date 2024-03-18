@@ -1,10 +1,8 @@
 "use client"
 
+import { useStateContext } from "./StateContext";
 import Option from "./Option/Option";
 import { Sum, Sub, Mul } from "../script";
-
-import { useStateContext } from "./StateContext";
-import { useRouter } from "next/navigation";
 
 enum Operation {
 	SUM,
@@ -14,8 +12,7 @@ enum Operation {
 }
 
 export default function MidlOption() {
-	const router = useRouter();
-	const { isNumber, number, results, setResults } = useStateContext();
+	const { isNumber, number, results, setResults, setLeft, setRight } = useStateContext();
 
 	function handle(operation: Operation) {
 		let left = JSON.parse(localStorage.getItem("left") || '{}') as number[][];
@@ -43,9 +40,11 @@ export default function MidlOption() {
 				left = [...right];
 				right = [...temp];
 
+				setLeft(left);
+				setRight(right);
+
 				localStorage.setItem("left", JSON.stringify(left));
 				localStorage.setItem("right", JSON.stringify(right));
-				router.refresh();
 				break;
 		}
 	}
