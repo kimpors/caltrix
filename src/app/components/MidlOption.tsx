@@ -2,7 +2,7 @@
 
 import { useStateContext } from "./StateContext";
 import Option from "./Option/Option";
-import { Sum, Sub, Mul, MatrixString } from "../script";
+import { Sum, Sub, Mul } from "../script";
 
 enum Operation {
 	SUM,
@@ -18,21 +18,34 @@ export default function MidlOption() {
 		let left = JSON.parse(localStorage.getItem("left") || '{}') as number[][];
 		let right = JSON.parse(localStorage.getItem("right") || '{}') as number[][];
 
+		const l = JSON.stringify(left);
+		const r = JSON.stringify(right);
+		let o = "";
+		let res = "";
+
 		switch (operation) {
 			case Operation.SUM:
-				setResults([...results, MatrixString(Sum(left, right))]);
+				o = "+";
+				res = JSON.stringify(Sum(left, right));
+				setResults([...results, {left: l, right: r, operation: o, result: res}])
 				break;
 
 			case Operation.SUB:
-				setResults([...results, MatrixString(Sub(left, right))]);
+				o = "-";
+				res = JSON.stringify(Sub(left, right));
+				setResults([...results, {left: l, right: r, operation: o, result: res}])
 				break;
 
 			case Operation.MUL:
+				o = "*";
+
 				if (isNumber) {
-					setResults([...results, MatrixString(Mul(left, number))]);
+					res = JSON.stringify(Mul(left, number));
 				} else {
-					setResults([...results, MatrixString(Mul(left, right))]);
+					res = JSON.stringify(Mul(left, right));
 				}
+
+				setResults([...results, {left: l, right: isNumber ? number : r, operation: o, result: res}])
 				break;
 
 			case Operation.SWAP:

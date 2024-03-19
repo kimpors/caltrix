@@ -13,17 +13,18 @@ interface Props {
 	matrix: number[][]
 }
 
+
 export default function More({ matrix }:Props) {
 	const { results, setResults } = useStateContext();
 
 	function handle(operation: Operation) {
 		switch (operation) {
 			case Operation.DET:
-				setResults([...results, Determinant(matrix).toString()]);
+				setResults([...results, {left: JSON.stringify(matrix), result: Determinant(matrix) }]);
 				break;
 
 			case Operation.REV:
-				setResults([...results, MatrixString(Inverse(matrix).map(row => row.map(num => Number(num.toFixed(3)))))]);
+				setResults([...results, {left: JSON.stringify(matrix), result: JSON.stringify(Inverse(matrix).map(row => row.map(num => Number(num.toFixed(3)))))}]);
 				break;
 		}
 	}

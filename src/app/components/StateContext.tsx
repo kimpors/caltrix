@@ -6,13 +6,20 @@ interface Props {
 	children: ReactNode
 }
 
+interface Result {
+	left?: string,
+	right: string,
+	operation?: string,
+	result: string,
+}
+
 interface ContextProps {
 	number: number,
 	setNumber: Dispatch<SetStateAction<number>>,
 	isNumber: boolean,
 	setIsNumber: Dispatch<SetStateAction<boolean>>,
-	results: string[],
-	setResults: Dispatch<SetStateAction<string[]>>,
+	results: Result[],
+	setResults: Dispatch<SetStateAction<Result[]>>,
 	left: number[][],
 	setLeft: Dispatch<SetStateAction<number[][]>>,
 	right: number[][],
@@ -24,8 +31,8 @@ const StateContext = createContext<ContextProps>({
 	setNumber: (): number => 0,
 	isNumber: false,
 	setIsNumber: (): boolean => false,
-	results: [],
-	setResults: (): string[] => [],
+	results: {} as Result[],
+	setResults: (): Result[] => [],
 	left: [],
 	setLeft: (): number[][] => [],
 	right: [],
@@ -36,7 +43,7 @@ const StateContext = createContext<ContextProps>({
 export default function StateProvider({ children }:Props) {
 	const [number, setNumber] = useState(0);
 	const [isNumber, setIsNumber] = useState(false);
-	const [results, setResults] = useState([] as string[]);
+	const [results, setResults] = useState([] as Result[]);
 	const [left, setLeft] = useState([] as number[][]);
 	const [right, setRight] = useState([] as number[][]);
 
