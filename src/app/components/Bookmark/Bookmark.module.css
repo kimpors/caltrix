@@ -25,24 +25,21 @@
 	filter: brightness(50%);
 }
 
-.light {
-	@apply bg-ctp-surface0
-}
-
-.pink {
-	@apply bg-ctp-flamingo text-ctp-surface0
-}
-
-.blue {
-	@apply bg-ctp-blue text-ctp-surface0
-}
-
-.green {
-	@apply bg-ctp-green
-
-}
-
-.gray {
-	@apply bg-ctp-subtext0
-
-}
+/**/
+/* .pink { */
+/* 	@apply bg-ctp-flamingo text-ctp-surface0 */
+/* } */
+/**/
+/* .blue { */
+/* 	@apply bg-ctp-blue text-ctp-surface0 */
+/* } */
+/**/
+/* .green { */
+/* 	@apply bg-ctp-green */
+/**/
+/* } */
+/**/
+/* .gray { */
+/* 	@apply bg-ctp-subtext0 */
+/**/
+/* } */

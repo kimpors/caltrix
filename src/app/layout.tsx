@@ -28,7 +28,7 @@ export default function RootLayout({
 				<Header>
 					<h1>Caltrix</h1>
 				</Header>
-				<Bookmark next_url="/settings" previous_url="/" />
+				<Bookmark />
 			</article>
 			<StateProvider>
 				{ children }

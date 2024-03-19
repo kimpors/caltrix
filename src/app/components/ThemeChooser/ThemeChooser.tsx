@@ -7,9 +7,8 @@ interface Props {
 }
 
 export default function ThemeChooser({ themes }:Props) {
-	function handle(name: string) {
-		localStorage.setItem("theme", name);
-		localStorage.setItem("prev-theme", name);
+	function handle(theme: string) {
+		localStorage.setItem("theme", theme);
 	}
 
 	return(
@@ -17,7 +16,7 @@ export default function ThemeChooser({ themes }:Props) {
 			<h1>Themes</h1>
 
 			{themes.map((t, i) => (
-				<button className="shadow" key={i} onClick={() => handle(t)}>{t}</button>
+				<button className="shadow" key={i} onClick={() => handle(t) }>{t}</button>
 			))}
 		</section>
 	)
