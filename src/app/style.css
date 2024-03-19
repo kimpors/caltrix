@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .pink {
 	--primary: #f0c6c6;
 	--secondary: #ed8796;

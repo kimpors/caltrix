@@ -67,9 +67,9 @@ export default function MidlOption() {
 			{!isNumber 
 			? 
 			<> 
+				<button onClick={() => handle(Operation.SWAP)}>swap</button>
 				<button onClick={() => handle(Operation.SUM)}>+</button>
 				<button onClick={() => handle(Operation.SUB)}>-</button>
-				<button onClick={() => handle(Operation.SWAP)}>swap</button>
 			</>
 			: <></>
 			}

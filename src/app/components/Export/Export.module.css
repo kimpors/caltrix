@@ -1,0 +1,33 @@
+/* a.export { */
+/* 	@apply bg-ctp-surface1 text-center w-60 mb-10 py-3 */
+/* } */
+/**/
+/* a.export { */
+/* 	box-shadow: 0px 3px 4px 3px rgb(0 0 0 / 25%); */
+/* 	transition: box-shadow 100ms ease-in; */
+/* } */
+/**/
+/* a.export:active { */
+/* 	box-shadow: 0px 3px 4px 1px rgb(0 0 0 / 25%); */
+/* } */
+
+.export {
+	@apply flex flex-col items-center w-full h-full
+}
+
+.export > h1 {
+	@apply px-10 text-4xl text-ctp-text font-bold mb-10
+}
+
+.export > a {
+	@apply text-center bg-ctp-surface1 w-60 mb-10 py-3
+}
+
+.export > a {
+	transition: box-shadow 100ms ease-in;
+}
+
+.export > a:active {
+	box-shadow: 0px 3px 4px 1px rgb(0 0 0 / 25%);
+}
+
