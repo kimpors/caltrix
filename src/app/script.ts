@@ -11,6 +11,12 @@ export class State {
 }
 
 export function Sum(a: number[][], b: number[][]): number[][] {
+
+	if (a.length !== b.length) {
+		window.alert("Matrices don't same size");
+		throw "Matrices don't same size";
+	}
+
 	const res = [...a];
 
 	for (let y = 0; y < a.length; y++) {
@@ -47,6 +53,11 @@ function MulValue(a: number[][], b: number): number[][] {
 }
 
 function MulMatrix(a: number[][], b: number[][]): number[][] {
+	if (a.length !== b.length) {
+		window.alert("Matrices don't same size");
+		throw "Matrices don't same size";
+	}
+
 	const res = Array.from(Array(a.length), () => new Array(a.length).fill(0));
 
 	for (let y = 0; y < a.length; y++) {
