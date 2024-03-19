@@ -11,7 +11,7 @@ enum Operation {
 	SWAP,
 }
 
-export default function MidlOption() {
+export default function Operations() {
 	const { isNumber, number, results, setResults, setLeft, setRight } = useStateContext();
 
 	function handle(operation: Operation) {

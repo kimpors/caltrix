@@ -1,10 +1,10 @@
 'use client'
 
 import Initilize from './components/Initilize';
-import MidlOption from './components/MidlOption';
 import MatrixCard from './components/MatrixCard';
 import Footer from './components/Footer/Footer';
 import Result from './components/Result/Result';
+import Operations from './components/Operations';
 
 export default function Home() {
 	return (
@@ -12,7 +12,7 @@ export default function Home() {
 			<main role='main'>
 				<Initilize />
 				<MatrixCard name="left" withNumberTab={ false } />
-				<MidlOption />
+				<Operations />
 				<MatrixCard name="right" withNumberTab={ true } />
 			</main>
 			<Footer>
