@@ -118,3 +118,21 @@ export function Cofactor(a: number[][], row: number, col: number): number[][] {
 	return [...a].filter((_, i) => i !== row)
 				.map(cols => cols.filter((_, i) => i !== col))
 }
+
+export function MatrixString(a: number[][]): string {
+	let res = "<mrow><mo> ( </mo><mtable>";
+	const size = a.length;
+
+	for (let y = 0; y < size; y++) {
+		res += "<mtr>"
+
+		for (let x = 0; x < size; x++) {
+			res += `<mn> ${a[y][x]} </mn>`;
+		}
+
+		res += "</mtr>"
+	}
+
+	res += "</mtable><mo> ) </mo></mrow>";
+	return res;
+}

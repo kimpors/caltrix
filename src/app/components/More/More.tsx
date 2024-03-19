@@ -1,6 +1,6 @@
 "use client"
 
-import { Determinant, Inverse } from '@/app/script';
+import { Determinant, Inverse, MatrixString } from '@/app/script';
 import styles from './More.module.css';
 import { useStateContext } from '../StateContext';
 
@@ -23,7 +23,7 @@ export default function More({ matrix }:Props) {
 				break;
 
 			case Operation.REV:
-				setResults([...results, Inverse(matrix).map(row => row.map(num => num.toFixed(3))).toString() ]);
+				setResults([...results, MatrixString(Inverse(matrix).map(row => row.map(num => Number(num.toFixed(3)))))]);
 				break;
 		}
 	}

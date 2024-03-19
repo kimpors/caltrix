@@ -2,7 +2,7 @@
 
 import { useStateContext } from "./StateContext";
 import Option from "./Option/Option";
-import { Sum, Sub, Mul } from "../script";
+import { Sum, Sub, Mul, MatrixString } from "../script";
 
 enum Operation {
 	SUM,
@@ -20,18 +20,18 @@ export default function MidlOption() {
 
 		switch (operation) {
 			case Operation.SUM:
-				setResults([...results, Sum(left, right).toString()]);
+				setResults([...results, MatrixString(Sum(left, right))]);
 				break;
 
 			case Operation.SUB:
-				setResults([...results, Sub(left, right).toString()]);
+				setResults([...results, MatrixString(Sub(left, right))]);
 				break;
 
 			case Operation.MUL:
 				if (isNumber) {
-					setResults([...results, Mul(left, number).toString()]);
+					setResults([...results, MatrixString(Mul(left, number))]);
 				} else {
-					setResults([...results, Mul(left, right).toString()]);
+					setResults([...results, MatrixString(Mul(left, right))]);
 				}
 				break;
 

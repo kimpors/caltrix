@@ -9,6 +9,7 @@
 .result > section {
 	box-shadow: inset 0px 4px 4px 5px rgb(0 0 0 / 25%);
 	background-color: var(--primary);
+	white-space: pre-wrap;
 }
 
 .result button {

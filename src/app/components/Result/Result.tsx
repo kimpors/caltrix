@@ -19,7 +19,8 @@ export default function Result() {
 			<button onClick={() => Clear()}>Clear</button>
 			{results.toReversed().map((result, i) => 
 				<section key={i}>
-					{ result }
+					<math dangerouslySetInnerHTML={{__html: result}}>
+					</math>
 				</section>
 			)}
 		</article>
