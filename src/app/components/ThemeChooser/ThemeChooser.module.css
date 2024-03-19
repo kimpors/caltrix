@@ -7,7 +7,7 @@
 }
 
 .chooser > button {
-	@apply bg-ctp-surface1 w-60 mb-10 py-3
+	@apply capitalize bg-ctp-surface1 w-60 mb-10 py-3
 }
 
 .chooser > button {

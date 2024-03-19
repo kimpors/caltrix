@@ -1,9 +1,13 @@
 .bookmark {
-	@apply h-10 w-16 text-center font-bold text-3xl mr-2 self-end
+	@apply flex float-right h-10 w-14 items-end text-center font-bold text-3xl mr-2 self-end
 }
 
 .bookmark:hover {
-	@apply h-12 
+	@apply h-16 
+}
+
+.bookmark:hover {
+	filter: brightness(120%);
 }
 
 .bookmark {
@@ -13,7 +17,7 @@
 }
 
 .bookmark a {
-	@apply block text-ctp-surface0
+	@apply w-full text-ctp-surface0
 }
 
 .bookmark a {

@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
 	  	<Provider>
-			<article className="flex flex-col">
+			<article style={{height:"0px"}} className="block">
 				<Header>
 					<h1>Caltrix</h1>
 				</Header>
