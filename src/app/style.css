@@ -6,53 +6,41 @@
 	--primary: #f0c6c6;
 	--secondary: #ed8796;
 	--accent:  #f5a97f;
-
-	background-color: var(--primary);
 }
 
 .blue {
 	--primary: #8aadf4;
 	--secondary: #7dc4e4;
 	--accent:  #b7bdf8;
-
-	background-color: var(--primary);
 }
 
 .green {
 	--primary: #a6da95;
 	--secondary: #8bd5ca;
 	--accent:  #eed49f;
-
-	background-color: var(--primary);
 }
 
 .gray {
 	--primary: #a5adcb;
 	--secondary: #939ab7;
 	--accent:  #cad3f5;
-
-	background-color: var(--primary);
-}
-
-.dark {
-	@apply bg-ctp-surface0
-}
-
-.dark {
-	--primary: #363a4f;
 }
 
 html, body, main {
 	@apply h-full
 }
 
-body {
-	@apply grid grid-flow-row
+html, body, main {
+	background-color: var(--primary);
 }
 
 html {
-	transition: background-color 250ms ease-out;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
+	@apply overflow-y-scroll
+}
+
+body {
+	@apply grid grid-flow-row
 }
 
 main {
@@ -64,6 +52,7 @@ input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
+
 input[type=number] {
   	-moz-appearance: textfield;
 	box-shadow: inset 0px 4px 4px 0px rgb(0 0 0 / 25%);
@@ -73,12 +62,8 @@ input[type=number] {
 	@apply flex flex-col min-w-max 
 }
 
-.container {
-	transition: all 300ms ease-out;
-}
-
 mrow {
-	text-align: center;
+	@apply text-center
 }
 
 .tab button {

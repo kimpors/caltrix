@@ -12,34 +12,9 @@
 
 .bookmark {
 	border-radius: 0px 0px 16px 16px;
-	transition: background-color 250ms ease-out;
-	transition: height 200ms ease-out;
+	transition: all 200ms ease-out;
 }
 
 .bookmark a {
-	@apply w-full text-ctp-surface0
+	@apply w-full
 }
-
-.bookmark a {
-	color: var(--primary);
-	filter: brightness(50%);
-}
-
-/**/
-/* .pink { */
-/* 	@apply bg-ctp-flamingo text-ctp-surface0 */
-/* } */
-/**/
-/* .blue { */
-/* 	@apply bg-ctp-blue text-ctp-surface0 */
-/* } */
-/**/
-/* .green { */
-/* 	@apply bg-ctp-green */
-/**/
-/* } */
-/**/
-/* .gray { */
-/* 	@apply bg-ctp-subtext0 */
-/**/
-/* } */

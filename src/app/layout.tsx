@@ -9,7 +9,6 @@ import StateProvider from "./components/StateContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 export const metadata: Metadata = {
   title: "Caltrix",
   description: "Site for matrix calculation.",
@@ -24,7 +23,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
 	  	<Provider>
-			<article style={{height:"100px"}}>
+			<article style={{ height:"150px" }}>
 				<Header>
 					<h1>Caltrix</h1>
 				</Header>

@@ -1,5 +1,3 @@
-'use client'
-
 import Initilize from './components/Initilize';
 import MatrixCard from './components/MatrixCard';
 import Footer from './components/Footer/Footer';

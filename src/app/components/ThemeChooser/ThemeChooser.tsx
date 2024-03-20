@@ -1,5 +1,6 @@
 'use client'
 
+import { useTheme } from 'next-themes';
 import styles from './ThemeChooser.module.css'
 
 interface Props {
@@ -7,16 +8,14 @@ interface Props {
 }
 
 export default function ThemeChooser({ themes }:Props) {
-	function handle(theme: string) {
-		localStorage.setItem("theme", theme);
-	}
+	const { setTheme } = useTheme();
 
 	return(
 		<section className={ styles.chooser }>
 			<h1>Themes</h1>
 
 			{themes.map((t, i) => (
-				<button className="shadow" key={i} onClick={() => handle(t) }>{t}</button>
+				<button className="shadow" key={i} onClick={() => setTheme(t) }>{t}</button>
 			))}
 		</section>
 	)
