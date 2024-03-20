@@ -45,7 +45,7 @@ export default function Operations() {
 					res = JSON.stringify(Mul(left, right));
 				}
 
-				setResults([...results, {left: l, right: isNumber ? number : r, operation: o, result: res}])
+				setResults([...results, {left: l, right: isNumber ? number.toString() : r, operation: o, result: res}])
 				break;
 
 			case Operation.SWAP:

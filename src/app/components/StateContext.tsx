@@ -7,8 +7,8 @@ interface Props {
 }
 
 interface Result {
-	left?: string,
-	right: string,
+	left: string,
+	right?: string,
 	operation?: string,
 	result: string,
 }
