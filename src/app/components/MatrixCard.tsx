@@ -8,7 +8,6 @@ import Matrix from "./Matrix/Matrix"
 import Controller from "./Controller/Controller"
 
 interface Props {
-
 	name: string
 	withNumberTab: boolean
 }

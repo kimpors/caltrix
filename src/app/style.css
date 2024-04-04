@@ -35,7 +35,6 @@ html, body, main {
 }
 
 html {
-	/* overflow-y: scroll; */
 	@apply overflow-y-scroll
 }
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { Determinant, Inverse, MatrixString } from '@/app/script';
+import { Determinant, Inverse } from '@/app/script';
 import styles from './More.module.css';
 import { useStateContext } from '../StateContext';
 

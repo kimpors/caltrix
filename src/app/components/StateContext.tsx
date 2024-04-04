@@ -1,11 +1,8 @@
 'use client'
-
 import { Dispatch, ReactNode, SetStateAction, createContext, useContext, useState } from "react";
-
 interface Props {
 	children: ReactNode
 }
-
 interface Result {
 	left: string,
 	right?: string,
@@ -38,7 +35,6 @@ const StateContext = createContext<ContextProps>({
 	right: [],
 	setRight: (): number[][] => [],
 });
-
 
 export default function StateProvider({ children }:Props) {
 	const [number, setNumber] = useState(0);
