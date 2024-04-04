@@ -14,7 +14,7 @@ export default function Initilize() {
 
 		setLeft(JSON.parse(localStorage.getItem("left") || "[]") as number[][])
 		setRight(JSON.parse(localStorage.getItem("right") || "[]") as number[][])
-	}, [])
+	}, [setLeft, setRight])
 
 	return null;
 }
