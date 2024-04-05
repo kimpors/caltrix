@@ -2,19 +2,18 @@
 
 ## Overview
 
-Site for matrix calculation, in this project i trying    
-achieve like game view, i mean stylish  menus, tabs, etc.    
-This project just for portfolio, so i don't think i stick    
-along with it(if i ever did it -_-).
+Simple site for matrix calcualtion.  
+Currently, it's don't have many capabilities.  
+Main purpose, of this project, it's get more  
+expirience and knowledge, simple learn something new.  
 
 ## Technology
 
-For this site i use [Next.js](https://nextjs.org/), [Tailwind](https://tailwindcss.com/)     
-and [Catppuccin](https://tailwindcss.catppuccin.com/) (i think it's the best color palette)
+- [Next.js](https://nextjs.org/)
+-  [Tailwind](https://tailwindcss.com/)
 
 ## Contributing
 
 Contributions are welcome! If you have any suggestions,    
 bug reports, or would like to contribute a new feature,    
 please create an issue or submit a pull request.
-
