@@ -32,7 +32,7 @@ export default function Result() {
 			res += `<mo>${operation}</mo>`;
 		}
 
-		if (right && typeof right == "number") {
+		if (Number(right)) {
 			res += `<mn>${right}</mn>`;
 		} else if (right) {
 			res += MatrixString(parse(right));
@@ -40,7 +40,7 @@ export default function Result() {
 
 		res += "<mo>=</mo>";
 
-		if (typeof result == "number") {
+		if (Number(result)) {
 			res += `<mn>${result}</mn>`;
 		} else {
 			res += MatrixString(parse(result));

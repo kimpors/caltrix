@@ -13,7 +13,6 @@ interface Props {
 	matrix: number[][]
 }
 
-
 export default function More({ matrix }:Props) {
 	const { results, setResults } = useStateContext();
 

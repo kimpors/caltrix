@@ -2,7 +2,7 @@
 
 import { useStateContext } from "./StateContext";
 import Option from "./Option/Option";
-import { Sum, Sub, Mul } from "../script";
+import { Sum, Sub, Mul } from "@/app/script";
 
 enum Operation {
 	SUM,
