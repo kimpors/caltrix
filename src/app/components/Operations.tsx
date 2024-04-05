@@ -1,8 +1,8 @@
 "use client"
 
-import { useStateContext } from "./StateContext";
-import Option from "./Option/Option";
-import { Sum, Sub, Mul } from "@/app/script";
+import Option 				from "./Option/Option";
+import { useStateContext } 	from "./StateContext";
+import { Sum, Sub, Mul } 	from "@/app/script";
 
 enum Operation {
 	SUM,

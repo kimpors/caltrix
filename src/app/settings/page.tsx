@@ -1,7 +1,7 @@
 'use client'
 
-import Export from "../components/Export/Export"
-import ThemeChooser from "../components/ThemeChooser/ThemeChooser"
+import Export 		from "@/app/components/Export/Export";
+import ThemeChooser from "@/app/components/ThemeChooser/ThemeChooser";
 
 export default function Settings() {
 	return (

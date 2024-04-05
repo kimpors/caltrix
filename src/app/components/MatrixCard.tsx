@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { useStateContext } from "./StateContext"
-import Card from "./Card/Card"
-import More from "./More/More"
-import Matrix from "./Matrix/Matrix"
-import Controller from "./Controller/Controller"
+import { useState } 		from "react";
+import { useStateContext } 	from "./StateContext";
+
+import Card 				from "./Card/Card";
+import More 				from "./More/More";
+import Matrix 				from "./Matrix/Matrix";
+import Controller 			from "./Controller/Controller";
 
 interface Props {
 	name: string

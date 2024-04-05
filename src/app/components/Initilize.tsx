@@ -1,18 +1,22 @@
 'use client'
 
-import { useEffect } from "react";
-import { useStateContext } from "./StateContext";
-import { useTheme } from "next-themes";
+import { useEffect } 		from "react";
+import { useTheme } 		from "next-themes";
+import { useStateContext } 	from "@/app/components/StateContext";
 
 export default function Initilize() {
 	const { setTheme } = useTheme();
 	const { setLeft, setRight } = useStateContext();
 
+	function createMatrix(): Array<Array<number>>
+	{
+		return Array<Array<number>>(3).fill(Array(3).fill(0));
+	}
 
 	useEffect(() => {
 		if (!localStorage.getItem("left")) {
-			localStorage.setItem("left", JSON.stringify(Array<Array<number>>(3).fill(Array(3).fill(0))));
-			localStorage.setItem("right", JSON.stringify(Array<Array<number>>(3).fill(Array(3).fill(0))));
+			localStorage.setItem("left", JSON.stringify(createMatrix()));
+			localStorage.setItem("right", JSON.stringify(createMatrix()));
 			setTheme("pink");
 		}
 

@@ -1,8 +1,8 @@
-import Initilize from './components/Initilize';
-import MatrixCard from './components/MatrixCard';
-import Footer from './components/Footer/Footer';
-import Result from './components/Result/Result';
-import Operations from './components/Operations';
+import Initilize 	from "@/app/components/Initilize";
+import MatrixCard 	from "@/app/components/MatrixCard";
+import Operations 	from "@/app/components/Operations";
+import Footer 		from "@/app/components/Footer/Footer";
+import Result 		from "@/app/components/Result/Result";
 
 export default function Home() {
 	return (

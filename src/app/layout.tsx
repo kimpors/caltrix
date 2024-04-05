@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
-import Header from './components/Header/Header'
-import Bookmark from "./components/Bookmark/Bookmark";
-import Provider from "./components/Provider";
+import type { Metadata } 	from "next";
+import Header 				from "@/app/components/Header/Header";
+import Bookmark 			from "@/app/components/Bookmark/Bookmark";
+import Provider 			from "@/app/components/Provider";
+import StateProvider 		from "@/app/components/StateContext";
 import "./style.css";
-
-import StateProvider from "./components/StateContext";
 
 export const metadata: Metadata = {
   title: "Caltrix",
