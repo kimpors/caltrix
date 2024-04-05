@@ -1,8 +1,8 @@
 "use client"
 
+import styles 					from './More.module.css';
+import { useStateContext } 		from '../StateContext';
 import { Determinant, Inverse } from '@/app/script';
-import styles from './More.module.css';
-import { useStateContext } from '../StateContext';
 
 enum Operation {
 	DET,

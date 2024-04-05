@@ -1,8 +1,8 @@
 "use client"
 
-import Link from "next/link"
-import styles from './Bookmark.module.css'
-import { usePathname } from "next/navigation"
+import styles 			from './Bookmark.module.css';
+import { usePathname } 	from "next/navigation";
+import Link 			from "next/link";
 
 export default function Bookmark() {
 	const pathname = usePathname();

@@ -1,8 +1,8 @@
 "use client"
 
-import { MatrixString } from '@/app/script';
-import { useStateContext } from '../StateContext'
-import styles from './Result.module.css'
+import styles 				from './Result.module.css'
+import { useStateContext } 	from '../StateContext'
+import { MatrixString } 	from '@/app/script';
 
 import * as React from 'react'
 

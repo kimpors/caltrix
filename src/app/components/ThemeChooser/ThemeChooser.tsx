@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from 'next-themes';
-import styles from './ThemeChooser.module.css'
+import styles 		from './ThemeChooser.module.css'
 
 interface Props {
 	themes: string[]

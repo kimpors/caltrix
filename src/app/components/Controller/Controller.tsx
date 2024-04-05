@@ -1,8 +1,8 @@
 'use client'
 
+import styles 		from "./Controller.module.css";
+import Option 		from "../Option/Option"
 import { Cofactor } from "@/app/script";
-import styles from "./Controller.module.css";
-import Option from "../Option/Option"
 
 interface Props {
 	name: string

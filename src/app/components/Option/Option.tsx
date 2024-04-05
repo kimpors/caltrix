@@ -1,5 +1,5 @@
-import { ReactNode } from "react"
-import styles from './Option.module.css'
+import styles 			from './Option.module.css'
+import { ReactNode } 	from "react"
 
 interface Props {
 	children: ReactNode
@@ -7,5 +7,5 @@ interface Props {
 }
 
 export default function Option({ className, children }:Props) {
-	return <section className={ styles.option + " shadow" + " " + className}>{ children }</section>
+	return <section className={`${styles.option} shadow ${className}`}>{ children }</section>
 }

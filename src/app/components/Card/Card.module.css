@@ -1,10 +1,9 @@
 .card {
-	@apply flex flex-col w-full h-full p-5
+	@apply flex flex-col w-full h-full p-5 bg-secondary
 }
 
 .card {
 	z-index: 1;
-	background-color: var(--secondary);
 }
 
 .round {

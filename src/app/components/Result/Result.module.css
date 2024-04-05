@@ -3,7 +3,7 @@
 }
 
 .result > section {
-	@apply m-10 p-5 font-bold text-ctp-base
+	@apply m-10 p-5 font-bold text-ctp-base bg-primary
 }
 
 .result > section button {
@@ -12,12 +12,10 @@
 
 .result > section {
 	box-shadow: inset 0px 4px 4px 5px rgb(0 0 0 / 25%);
-	background-color: var(--primary);
 	white-space: pre-wrap;
 }
 
 .result button {
-	background-color: var(--primary);
 	box-shadow: 0px 4px 4px 3px rgb(0 0 0 / 25%);
 	transition: box-shadow 100ms ease-out;
 }
@@ -35,11 +33,10 @@
 }
 
 .result > section button {
-	@apply flex m-5 p-2 font-bold
+	@apply flex m-5 p-2 font-bold bg-accent
 }
 
 .result > section button {
-	background-color: var(--accent);
 	box-shadow: 0px 4px 4px 3px rgb(0 0 0 / 25%);
 	transition: box-shadow 100ms ease-out;
 }

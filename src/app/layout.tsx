@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="bg-primary" lang="en" suppressHydrationWarning>
       <body>
 	  	<Provider>
 			<article style={{ height:"150px" }}>

@@ -1,7 +1,7 @@
 "use client"
 
-import { useStateContext } from "../StateContext"
-import styles from './Export.module.css';
+import styles 				from './Export.module.css';
+import { useStateContext } 	from "../StateContext"
 
 export default function Export() {
 	const { results } = useStateContext();

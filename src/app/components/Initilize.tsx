@@ -2,7 +2,7 @@
 
 import { useEffect } 		from "react";
 import { useTheme } 		from "next-themes";
-import { useStateContext } 	from "@/app/components/StateContext";
+import { useStateContext } 	from "./StateContext";
 
 export default function Initilize() {
 	const { setTheme } = useTheme();
